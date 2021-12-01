@@ -58,6 +58,24 @@
                     {% endfor %}
                 </tbody>
             </table>
+
+            <h4>Recommendation</h4>
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <!-- Your Columns HERE -->
+                        <th scope="col">Place</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for recitems in rec_items %}
+                     
+                        <tr>
+                            <td>{{recitems}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
 
