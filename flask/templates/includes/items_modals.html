@@ -1,0 +1,72 @@
+<style>
+    .modal-content {
+      background-color:#ffffff
+    }
+  </style>
+
+<!-- More Info -->
+<!-- <div class="modal fade" id="Modal-MoreInfo-{{items[0]}}"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">
+          
+          See the reviews from other users!
+        </h5>
+        <button type="button" class="close"
+                data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Here goes the reviews...
+        {% for review in itemReviews %}
+            score : {{ review[0] }}
+            review : {{ review[1] }} 
+        {% endfor %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- Add to Wishlist-->
+<div class="modal fade" id="Modal-AddWishlist-{{items[0]}}"
+     tabindex="-1"
+     aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="ModalLabel">
+          <!-- -->
+          Add the below to your Wish-to-Go?
+        </h5>
+        <button type="button" class="close"
+                data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {{items[1]}}
+        <form method="POST">
+            <input type="hidden" name="itemid" value="{{items[0]}}">
+            <input type="hidden" name="itemname" value="{{items[1]}}">
+            <input type="hidden" name="userid" value="{{session.userid}}">
+            <input type="hidden" name="username" value="{{session.username}}">
+            <input type="submit" value="Add!">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary"
+                data-dismiss="modal">Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
