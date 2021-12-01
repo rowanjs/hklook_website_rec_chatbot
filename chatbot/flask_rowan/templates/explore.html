@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block title %}
+    Explore
+{% endblock %}
+
+{% block content %}
+   
+    <div class="row" style="margin-top:5px; margin-left:5px">
+        <div class="col-8">
+            <h1 style="text-align:center">Explore What's Around!</h1>
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <!-- Your Columns HERE -->
+                        <th scope="col">ID</th>
+                        <th scope="col">Place</th>
+                        <th scope="col">About</th>
+                        <th scope="col">Options</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Your rows inside the table HERE: -->
+                        {% for items in itemsDetails %}
+                        {% include 'includes/items_modals.html' %}
+                            <tr>
+                                <td>{{items[0]}}</td>
+                                <td>{{items[1]}}</td>
+                                <td>{{items[7]}}</td>
+                                <td>
+                                    <button class="btn btn-outline btn-info" data-toggle="modal" data-target="#Modal-MoreInfo-{{items[0]}}">More Info</button>
+                                    <button class="btn btn-outline btn-success" data-toggle="modal" data-target="#Modal-AddWishlist-{{items[0]}}">Add to WishList</button>
+                                </td>
+                            </tr>
+                        {% endfor %}
+        
+                </tbody>
+            </table>
+        </div>
+
+
+        <div class="col-4">
+            <h4>Wishlist</h4>
+            <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                        <!-- Your Columns HERE -->
+                        <th scope="col">ID</th>
+                        <th scope="col">Place</th>
+                    </tr>
+                </thead>
+                <tbody>
+                     {% for wlitems in wishlistitems %}
+                     
+                        <tr>
+                            <td>{{wlitems[2]}}</td>
+                            <td>{{wlitems[3]}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+   
+{% endblock %}

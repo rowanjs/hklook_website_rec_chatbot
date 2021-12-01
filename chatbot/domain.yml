@@ -1,0 +1,56 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- deny:
+    use_entities: true
+- greet:
+    use_entities: true
+- recommend:
+    use_entities: true
+- nlu_fallback:
+    use_entities: true
+- affirm:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+entities:
+- description
+slots:
+  user_input:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_greet:
+  - text: Hi. I am LeggoBot. I am here to recommend you a place to play. Let me know what you want and Let's go!
+  utter_iamabot:
+  - text: I am LeggoBot, a chatbot, powered by Rasa.
+  utter_ask_rephrase:
+  - text: I'm sorry, I didn't quite understand that. Could you rephrase?
+  utter_ask_rephrase2:
+  - text: Sorry, I still didn't quite get that. You can just let me know if you want someplace fun or if you want a place to go with your family. I can help you with that.
+  utter_default:
+  - text: I'm sorry that I couldn't be of better assistance.
+  utter_thankyou:
+  - text: Glad I could be of assistance. Find me again next time and Leggo!
+actions:
+- action_recommend
+- action_save_input
+- utter_ask_rephrase
+- utter_ask_rephrase2
+- utter_default
+- utter_greet
+- utter_thankyou
+forms: {}
+e2e_actions: []

@@ -1,0 +1,27 @@
+version: "2.0"
+
+rules:
+
+  - rule: welcome user
+    conversation_start: true  # this rule only applies at the beginning of a conversation
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+# - rule: Implementation of the Two-Stage-Fallback
+#   steps:
+#   - intent: nlu_fallback
+#   - action: action_two_stage_fallback
+#   - active_loop: action_two_stage_fallback
+
+  # - rule: Say goodbye anytime the user says goodbye
+  #   steps:
+  #   - intent: goodbye
+  #   - action: utter_goodbye
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+    - intent: bot_challenge
+    - action: utter_iamabot
+
+

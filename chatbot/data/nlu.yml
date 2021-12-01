@@ -1,0 +1,197 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - yo
+    - lets try again
+    - let's do this again
+    - sup
+    - Hello
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - sayonara
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - that's right
+    - ok
+    - okay
+    - great stuff
+    - bravo
+    - cheers
+    - sure
+    - thanks
+    - nice
+    - good
+    - ok not bad
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - boring
+    - lame
+    - sucks
+    - not this one
+    - maybe not
+    - give me another recommendation
+    - nah too boring
+    - nah
+    - next
+    - any other recommendations?
+    - not ok
+    - no la
+    - no i meant bowling
+    - really?
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: recommend
+  examples: |
+    - i want someplace [fun](description)
+    - show me something [exciting](description)
+    - i want to get [wasted](description)
+    - need some [beer](description)
+    - meeting someone for a date!
+    - somewhere that I can bring my [parents](description)
+    - is there a place where I can go exercise?
+    - it's [family](description) day. recommend me a place.
+    - show me someplace good.
+    - [surprise](description) me!
+    - anywhere that's cheap
+    - let's go to a [relaxing](description) place.
+    - maybe a place thats peaceful?
+    - we are thinking of doing something intellectual.
+    - i love [unpredictable](description) experiences!
+    - just give me a recommendation for something [novel](description).
+    - show me a serene place
+    - i want to go someplace peaceful
+    - show me someplace serene
+    - i want to go to a place for meeting girls
+    - no i want to go to a place to meet hot girls
+    - looking for something [fun](description)
+    - i want to go bowling
+    - spooky
+    - i want scary
+    - Somewhere romantic
+    - Place for dating?
+    - place to go with boyfriends?
+    - anywhere else?
+    - i want to go somewhere alone
+    - [fun](description) place
+    - someplace [fun](description)
+- intent: nlu_fallback
+  examples: |
+    - boom shakalaka
+    - no way in hell am I going to answer you stupid
+    - diu nei la
+    - diu nei
+    - dou wa diu nei lor
+    - shut up man
+    - sau pei
+    - i said diu lei lo mo
+    - dou wa diu lei lo mo lor
+    - boom boom pow
+    - monge gei ngo bah
+    - told you still many times you still don't get?
+    - How’s life
+- synonym: fun
+  examples: |
+    - exciting
+    - thrill
+    - adrenaline
+    - hardcore
+    - interesting
+    - wicked
+- synonym: alcohol
+  examples: |
+    - wasted
+    - beer
+    - wine
+    - whisky
+    - gin
+    - drinking
+    - partying
+    - party
+- synonym: relaxing
+  examples: |
+    - relax
+    - serene
+    - rest
+- synonym: family
+  examples: |
+    - parents
+- synonym: surprise
+  examples: |
+    - shock
+    - random
+    - unpredictable
+    - novel

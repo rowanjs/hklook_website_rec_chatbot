@@ -1,0 +1,109 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend
+  - action: action_save_input
+  - action: action_recommend
+  - intent: affirm
+  - action: utter_thankyou
+  - action: action_restart
+
+- story: sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend
+  - action: action_save_input
+  - action: action_recommend
+  - intent: deny
+  - action: action_recommend
+  - intent: deny
+  - action: utter_default
+  - action: action_restart
+
+- story: fallback path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: nlu_fallback
+  - action: utter_ask_rephrase
+  - intent: nlu_fallback
+  - action: utter_ask_rephrase2
+  - intent: nlu_fallback
+  - action: utter_default
+  - action: action_restart
+
+
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend
+  - action: action_save_input
+  - slot_was_set:
+    - user_input: show me someplace serene
+  - action: action_recommend
+  - intent: deny
+  - action: action_recommend
+  - intent: deny
+  - action: utter_default
+  - action: action_restart
+
+- story: interactive_story_2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: nlu_fallback
+  - action: utter_ask_rephrase
+  - intent: nlu_fallback
+  - action: utter_ask_rephrase2
+  - intent: nlu_fallback
+  - action: utter_default
+  - action: action_restart
+
+- story: interactive_story_3
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: recommend
+  - action: action_save_input
+  - slot_was_set:
+    - user_input: i want to go to a place for meeting girls
+  - action: action_recommend
+  - intent: recommend
+  - action: action_save_input
+  - slot_was_set:
+    - user_input: no i want to go to a place to meet hot girls
+  - action: action_recommend
+  - intent: affirm
+  - action: utter_thankyou
+  - action: action_restart
+
+- story: interactive_story_4
+  steps:
+  - action: utter_greet
+  - intent: recommend
+    entities:
+    - description: fun
+  - action: action_save_input
+  - slot_was_set:
+    - user_input: fun
+  - action: action_recommend
+  - intent: affirm
+  - action: utter_thankyou
+  - action: action_restart
+
+- story: interactive_story_1
+  steps:
+  - slot_was_set:
+    - user_input: i want to go bowling
+  - intent: deny
+  - action: utter_default
+  - action: action_restart
