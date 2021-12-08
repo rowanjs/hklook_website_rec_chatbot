@@ -17,10 +17,17 @@
           display: block;
         }
       </style>
+
+      <style type="text/css">
+        table {border:solid 5px rgb(255,196,0); background-color:#FFF; color:#FFF;}
+        table thead tr{background-color:rgb(255,196,0);}
+        table td {border:solid 1px rgb(255,196,0);}
+      </style>
+
    </head>
    <body>
       <!-- Navbar here -->
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+      <nav class="navbar navbar-expand-md navbar-dark bg-warning">
         <a class="navbar-brand" href="{{url_for('home_page')}}">HKLOOK</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
             <span class="navbar-toggler-icon"></span>
@@ -33,6 +40,11 @@
                 <li class="nav-item">
                     <a class="nav-link" href="{{url_for('explore_page')}}">Explore</a>
                 </li>
+
+                <li class="nav-item">
+                  <a class="nav-link" href="{{url_for('review_page')}}">Review</a>
+                </li>
+
             </ul>
             <ul class="navbar-nav"></ul>
                 {% if session.username %}
@@ -103,13 +115,12 @@
       </script>
     </body>
 
-   <!-- colour mode
+  
    <style>
       body {
-      background-color: #212121;
-      color: white
+      background-color: rgb(255,243,214);
+      color: #212121
       }
    </style>
-   ends here-->
-
+   
 </html>
